@@ -33,6 +33,10 @@ class AppComponentState extends State<AppComponent> {
                   color: Colours.kPrimary,
                   fontSize: 28,
                   fontWeight: FontWeight.bold),
+              titleLarge: TextStyle(
+                  color: Colours.kPrimary,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
               titleSmall: TextStyle(
                   color: Colours.kPrimary,
                   fontSize: 16,

@@ -1,0 +1,62 @@
+[
+  {
+    "cn": "中国",
+    "en": "China",
+    "code": "cn",
+    "prefix": "+86"
+  },
+  {
+    "cn": "美国",
+    "en": "United States",
+    "code": "us",
+    "prefix": "+1"
+  },
+  {
+    "cn": "加拿大",
+    "en": "Canada",
+    "code": "ca",
+    "prefix": "+1"
+  },
+  {
+    "cn": "英国",
+    "en": "United Kingdom",
+    "code": "gb",
+    "prefix": "+44"
+  },
+  {
+    "cn": "澳大利亚",
+    "en": "Australia",
+    "code": "au",
+    "prefix": "+61"
+  },
+  {
+    "cn": "德国",
+    "en": "Germany",
+    "code": "de",
+    "prefix": "+49"
+  },
+  {
+    "cn": "法国",
+    "en": "France",
+    "code": "fr",
+    "prefix": "+33"
+  },
+  {
+    "cn": "意大利",
+    "en": "Italy",
+    "code": "it",
+    "prefix": "+39"
+  },
+  {
+    "cn": "西班牙",
+    "en": "Spain",
+    "code": "es",
+    "prefix": "+34"
+  },
+  {
+    "cn": "日本",
+    "en": "Japan",
+    "code": "jp",
+    "prefix": "+81"
+  }
+]

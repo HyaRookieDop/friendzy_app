@@ -1,3 +1,5 @@
+import 'package:friendzy_app/config/application.dart';
+import 'package:friendzy_app/config/router.dart';
 import 'package:friendzy_app/screens/onBoarding/components/get_buttons.dart';
 import 'package:friendzy_app/screens/onBoarding/components/splash_view.dart';
 import 'package:friendzy_app/utils/colours.dart';
@@ -26,6 +28,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>
 
   @override
   void dispose() {
+    print("dispose");
     _animationController.dispose();
     super.dispose();
   }
@@ -55,6 +58,10 @@ class OnBoardingScreenState extends State<OnBoardingScreen>
         ));
   }
 
+  void login() {
+    Application.router.navigateTo(context, Routes.loginRoute, replace: true);
+  }
+
   void onNextClick() {
     if (_animationController.value >= 0 && _animationController.value <= 0.2) {
       _animationController.animateTo(0.4);
@@ -63,7 +70,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>
       _animationController.animateTo(0.6);
     } else if (_animationController.value > 0.4 &&
         _animationController.value <= 0.6) {
-      _animationController.animateTo(0.8);
+      login();
     }
   }
 }

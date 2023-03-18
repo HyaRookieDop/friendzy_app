@@ -86,7 +86,7 @@ class _GetButtonsState extends State<GetButtons> {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: CupertinoButton(
                     padding: const EdgeInsets.all(8.0),
