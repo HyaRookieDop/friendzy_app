@@ -28,7 +28,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>
 
   @override
   void dispose() {
-    print("dispose");
+    print("dispose onBoardingScreen");
     _animationController.dispose();
     super.dispose();
   }
@@ -59,7 +59,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>
   }
 
   void login() {
-    Application.router.navigateTo(context, Routes.loginRoute, replace: true);
+    Application.router.navigateTo(context, Routes.loginRoute);
   }
 
   void onNextClick() {

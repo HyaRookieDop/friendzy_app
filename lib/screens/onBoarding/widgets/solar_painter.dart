@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/entity/solar.dart';
 import 'package:friendzy_app/utils/colours.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +24,11 @@ class SolarPainter extends CustomPainter {
 
   @override
   paint(Canvas canvas, Size size) {
-    final Offset center = Offset(size.width / 2, 205);
+    final Offset center = Offset(0.5.sw, 205.h);
     // 绘制粉色轨道
-    canvas.drawCircle(center, 100, orbitPinkPaint);
+    canvas.drawCircle(center, 100.w, orbitPinkPaint);
     // 绘制白色轨道
-    canvas.drawCircle(center, 60, orbitWhitePaint);
+    canvas.drawCircle(center, 60.w, orbitWhitePaint);
     // 绘制虚线轨道
     drawDottedLine(canvas, center);
     if (solars.isNotEmpty) {
@@ -64,7 +65,7 @@ class SolarPainter extends CustomPainter {
         offset.dy - solar.size.height / 2, solar.size.width, solar.size.height);
 
     // 裁剪为圆形
-    RRect rRect = RRect.fromRectAndRadius(dstRect, const Radius.circular(40));
+    RRect rRect = RRect.fromRectAndRadius(dstRect, Radius.circular(40.r));
     Path roundPath = Path()..addRRect(rRect);
     canvas.save();
     canvas.clipPath(roundPath);
@@ -74,7 +75,7 @@ class SolarPainter extends CustomPainter {
 
   drawDottedLine(Canvas canvas, Offset center) {
     Path path = Path();
-    path.addOval(Rect.fromCircle(center: center, radius: 145));
+    path.addOval(Rect.fromCircle(center: center, radius: 145.r));
     ui.PathMetrics pathMetrics = path.computeMetrics();
     ui.PathMetric pathMetric = pathMetrics.elementAt(0);
     double length = pathMetric.length;

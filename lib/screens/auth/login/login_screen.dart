@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/components/back_top_button.dart';
+import 'package:friendzy_app/components/button.dart';
+import 'package:friendzy_app/components/login_button.dart';
 import 'package:friendzy_app/components/phone_field.dart';
+import 'package:friendzy_app/utils/asset_path.dart';
 import 'package:friendzy_app/utils/colours.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,19 +21,19 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colours.kBackground,
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24).w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BackTopButton(),
-            const SizedBox(height: 16),
+            const BackTopButton(),
+            SizedBox(height: 16.w),
             Align(
                 alignment: Alignment.center,
                 child: Text(
                   "Login",
                   style: Theme.of(context).textTheme.titleLarge,
                 )),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.w),
             Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -37,37 +41,48 @@ class _LoginScreenState extends State<LoginScreen> {
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyMedium,
                 )),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.w),
             Container(
               width: double.infinity,
               // duration: const Duration(milliseconds: 1500),
               decoration: BoxDecoration(
                 color: Colours.kWhite,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.r),
               ),
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: SizedBox(
-                child: Row(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8, horizontal: 16).w,
+              child: const SizedBox(
+                child: PhoneField(),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const PhoneField(),
-                    Container(
-                      width: 1,
-                      height: 24,
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      color: Colours.kBlack.withOpacity(0.08),
-                    ),
-                    Expanded(
-                      child: TextField(
-                        keyboardType: TextInputType.phone,
-                        cursorColor: Colours.kSecondary1,
-                        decoration: InputDecoration.collapsed(
-                          hintText: "Enter phone number",
-                          hintStyle:
-                              TextStyle(color: Colours.kBlack.withOpacity(0.5)),
-                          // errorText: "请输入合法手机号",
-                        ),
+                    Button(
+                        child: Text('Login',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: Colours.kWhite))),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 16.0.w),
+                      child: Text(
+                        "OR",
+                        style: TextStyle(
+                            color: Colours.kBlack.withOpacity(0.3),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12.sp),
                       ),
                     ),
+                    LoginButton(
+                      svgs: ['google'.svg, 'IPhone'.svg],
+                      texts: const ['Login with Phone', 'Login with Apple'],
+                      backgroundColors: const [Colors.white, Colors.white],
+                    )
                   ],
                 ),
               ),

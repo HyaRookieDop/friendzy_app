@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/utils/asset_path.dart';
 import 'package:friendzy_app/utils/colours.dart';
 import 'package:flutter/material.dart';
@@ -24,60 +25,63 @@ class MakeFriends extends StatelessWidget {
       child: SlideTransition(
         position: secondHalfAnimation,
         child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          padding: EdgeInsets.only(top: ScreenUtil().statusBarHeight),
           child: Stack(
             fit: StackFit.expand,
             children: [
               Positioned(
                   left: 0,
-                  top: 69,
+                  right: 0,
+                  top: 69.w,
                   child: SvgPicture.asset(
                     "dotted_line".svg,
-                    fit: BoxFit.contain,
+                    width: ScreenUtil().screenWidth,
+                    fit: BoxFit.fill,
                   )),
               Positioned(
-                  right: 40,
-                  top: 53,
+                  right: 40.w,
+                  top: 53.w,
                   child: Container(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: EdgeInsets.all(6.0.r),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colours.kWhite,
                         boxShadow: [
                           BoxShadow(
                               color: const Color(0xFFF6D1EB).withOpacity(0.78),
-                              blurRadius: 60,
+                              blurRadius: 60.r,
                               offset: const Offset(0, 20))
                         ]),
                     child: ClipOval(
                       child: Image.asset(
                         "women/1".webp,
-                        width: 112,
+                        width: 112.w,
                       ),
                     ),
                   )),
               Positioned(
-                  left: 40,
-                  top: 171,
+                  left: 40.w,
+                  top: 171.w,
                   child: Container(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: EdgeInsets.all(6.0.r),
                     decoration: BoxDecoration(
                         color: Colours.kSecondary1, shape: BoxShape.circle),
                     child: ClipOval(
                       child: Image.asset(
                         "women/2".webp,
-                        width: 112,
+                        width: 112.w,
                       ),
                     ),
                   )),
               Positioned(
-                left: 78,
-                top: 88,
+                left: 78.w,
+                top: 88.w,
                 child: Container(
                   padding: const EdgeInsets.only(
-                      top: 4.0, bottom: 6.0, left: 12.0, right: 12.0),
+                          top: 4.0, bottom: 6.0, left: 12.0, right: 12.0)
+                      .w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32),
+                      borderRadius: BorderRadius.circular(32.r),
                       border:
                           Border.all(width: 1.0, color: Colours.kSecondary1)),
                   child: Text(
@@ -88,15 +92,16 @@ class MakeFriends extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 224,
-                top: 266,
+                left: 224.w,
+                top: 266.w,
                 child: Container(
                   padding: const EdgeInsets.only(
-                      top: 4.0, bottom: 6.0, left: 12.0, right: 12.0),
+                          top: 4.0, bottom: 6.0, left: 12.0, right: 12.0)
+                      .w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(32),
                       border:
-                          Border.all(width: 1.0, color: Colours.kSecondary1)),
+                          Border.all(width: 1.0.w, color: Colours.kSecondary1)),
                   child: Text(
                     "👗 Fashion",
                     style: TextStyle(
@@ -105,14 +110,15 @@ class MakeFriends extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: 64,
-                top: 169,
+                right: 69.w,
+                top: 169.w,
                 child: Container(
                   padding: const EdgeInsets.only(
-                      top: 4.0, bottom: 6.0, left: 12.0, right: 12.0),
+                          top: 4.0, bottom: 6.0, left: 12.0, right: 12.0)
+                      .w,
                   decoration: BoxDecoration(
                       color: Colours.kWhite,
-                      borderRadius: BorderRadius.circular(8.0)),
+                      borderRadius: BorderRadius.circular(8.0.r)),
                   child: Text(
                     "You 👋",
                     style: TextStyle(
@@ -121,24 +127,25 @@ class MakeFriends extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  right: 93,
-                  top: 161,
+                  right: 94.w,
+                  top: 161.w,
                   child: Container(
-                    padding: const EdgeInsets.all(5.0),
+                    padding: EdgeInsets.all(5.0.r),
                     decoration: BoxDecoration(
                         color: Colours.kWhite, shape: BoxShape.circle),
                     child: Container(
-                        width: 6.0,
-                        height: 6.0,
+                        width: 6.0.w,
+                        height: 6.0.w,
                         decoration: const BoxDecoration(
                             color: Color(0xFFF4D8EF), shape: BoxShape.circle)),
                   )),
               Positioned(
-                left: 60,
-                top: 287,
+                left: 64.w,
+                top: 287.w,
                 child: Container(
                   padding: const EdgeInsets.only(
-                      top: 4.0, bottom: 6.0, left: 12.0, right: 12.0),
+                          top: 4.0, bottom: 6.0, left: 12.0, right: 12.0)
+                      .w,
                   decoration: BoxDecoration(
                       color: Colours.kSecondary1,
                       borderRadius: BorderRadius.circular(8.0)),
@@ -150,24 +157,24 @@ class MakeFriends extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  left: 94,
-                  top: 279,
+                  left: 94.w,
+                  top: 279.w,
                   child: Container(
-                    padding: const EdgeInsets.all(5.0),
+                    padding: EdgeInsets.all(5.0.r),
                     decoration: BoxDecoration(
                         color: Colours.kSecondary1, shape: BoxShape.circle),
                     child: Container(
-                        width: 6.0,
-                        height: 6.0,
+                        width: 6.0.w,
+                        height: 6.0.w,
                         decoration: const BoxDecoration(
                             color: Color(0xFFF4D8EF), shape: BoxShape.circle)),
                   )),
               Positioned(
                   left: 0,
-                  bottom: 172 + MediaQuery.of(context).padding.bottom,
+                  bottom: 172.w + ScreenUtil().bottomBarHeight,
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.symmetric(horizontal: 48),
+                    width: ScreenUtil().screenWidth,
+                    padding: EdgeInsets.symmetric(horizontal: 48.w),
                     child: Column(
                       children: [
                         Text(
@@ -177,7 +184,8 @@ class MakeFriends extends StatelessWidget {
                         ),
                         Padding(
                           padding:
-                              const EdgeInsets.only(left: 2, right: 2, top: 12),
+                              const EdgeInsets.only(left: 2, right: 2, top: 12)
+                                  .w,
                           child: Text(
                             "Interact with people with the same interest like you",
                             style: Theme.of(context)

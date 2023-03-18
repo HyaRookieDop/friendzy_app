@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/utils/asset_path.dart';
 import 'package:friendzy_app/utils/colours.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class SplashViewState extends State<SplashView> {
     return SlideTransition(
       position: leaveAnimation,
       child: Container(
-        width: MediaQuery.of(context).size.width,
+        width: ScreenUtil().screenWidth,
         decoration: BoxDecoration(
           color: Colours.kSecondary1,
         ),
@@ -45,15 +46,15 @@ class SplashViewState extends State<SplashView> {
           Center(
             child: SvgPicture.asset(
               "logo".svg,
-              width: 200,
+              width: 200.w,
             ),
           ),
           Positioned(
             right: 0,
-            top: MediaQuery.of(context).padding.top + 18,
+            top: ScreenUtil().statusBarHeight + 18.w,
             child: SvgPicture.asset(
               "bubble".svg,
-              width: 307,
+              width: 307.w,
               fit: BoxFit.cover,
             ),
           )

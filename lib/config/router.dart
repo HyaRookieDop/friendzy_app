@@ -11,8 +11,10 @@ class Routes {
     router.notFoundHandler =
         Handler(handlerFunc: (context, parameters) => NotFound());
     router.define(rootRoute,
-        handler: Handler(handlerFunc: (context, paramters) => LoginScreen()));
+        handler: Handler(
+            handlerFunc: (context, paramters) => const OnBoardingScreen()));
     router.define(loginRoute,
-        handler: Handler(handlerFunc: (context, paramters) => LoginScreen()));
+        handler:
+            Handler(handlerFunc: (context, paramters) => const LoginScreen()));
   }
 }

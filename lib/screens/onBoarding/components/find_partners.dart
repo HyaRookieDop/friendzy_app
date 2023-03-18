@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/utils/asset_path.dart';
 import 'package:friendzy_app/utils/colours.dart';
 import 'package:flutter/material.dart';
@@ -29,43 +30,44 @@ class _FindPartnersState extends State<FindPartners> {
       child: SlideTransition(
         position: secondHalfAnimation,
         child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          padding: EdgeInsets.only(top: ScreenUtil().statusBarHeight),
           child: Stack(
             children: [
               Positioned(
                   left: 0,
-                  top: 69,
+                  top: 69.w,
                   child: SvgPicture.asset(
                     "dotted_line".svg,
-                    fit: BoxFit.contain,
+                    width: ScreenUtil().screenWidth,
+                    fit: BoxFit.fill,
                   )),
               Positioned(
-                  left: 48,
-                  top: 108,
+                  left: 48.w,
+                  top: 108.w,
                   child: Container(
-                    width: 132,
-                    height: 160,
+                    width: 132.w,
+                    height: 160.w,
                     decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(80),
-                            topRight: Radius.circular(80),
-                            bottomLeft: Radius.circular(80)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(80.r),
+                            topRight: Radius.circular(80.r),
+                            bottomLeft: Radius.circular(80.r)),
                         image: DecorationImage(
                             image: AssetImage("men/1".webp),
                             fit: BoxFit.cover)),
                   )),
               Positioned(
-                  top: 164,
-                  right: 48,
+                  top: 164.w,
+                  right: 48.w,
                   child: Container(
-                    width: 132,
-                    height: 160,
+                    width: 132.w,
+                    height: 160.w,
                     decoration: BoxDecoration(
                         color: Colours.kSecondary2,
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(80),
-                            topRight: Radius.circular(80),
-                            bottomRight: Radius.circular(80)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(80.r),
+                            topRight: Radius.circular(80.r),
+                            bottomRight: Radius.circular(80.r)),
                         image: DecorationImage(
                           image: AssetImage("women/2".webp),
                           fit: BoxFit.cover,
@@ -73,28 +75,28 @@ class _FindPartnersState extends State<FindPartners> {
                         )),
                   )),
               Positioned(
-                  top: 124,
-                  left: 144,
+                  top: 124.w,
+                  left: 144.w,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12.0, vertical: 6.0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 12.0.w, vertical: 6.0.w),
                     decoration: BoxDecoration(
                         color: Colours.kSecondary1,
-                        borderRadius: BorderRadius.circular(32.0)),
+                        borderRadius: BorderRadius.circular(32.0.r)),
                     child: Text(
                       "100% Match",
                       style: TextStyle(
                           color: Colours.kWhite,
-                          fontSize: 16.0,
+                          fontSize: 16.0.sp,
                           fontWeight: FontWeight.w600),
                     ),
                   )),
               Positioned(
                   left: 0,
-                  bottom: 172 + MediaQuery.of(context).padding.bottom,
+                  bottom: 172.w + ScreenUtil().bottomBarHeight,
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.symmetric(horizontal: 48),
+                    width: ScreenUtil().screenWidth,
+                    padding: EdgeInsets.symmetric(horizontal: 48.r),
                     child: Column(
                       children: [
                         Text(
@@ -104,7 +106,8 @@ class _FindPartnersState extends State<FindPartners> {
                         ),
                         Padding(
                           padding:
-                              const EdgeInsets.only(left: 2, right: 2, top: 12),
+                              const EdgeInsets.only(left: 2, right: 2, top: 12)
+                                  .w,
                           child: Text(
                             "Join us with other millions of people and find your best matches",
                             style: Theme.of(context)

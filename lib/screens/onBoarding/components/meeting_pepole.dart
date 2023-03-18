@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:friendzy_app/entity/solar.dart';
 import 'package:friendzy_app/screens/onBoarding/widgets/solar_painter.dart';
 import 'package:friendzy_app/utils/asset_img.dart';
@@ -56,7 +55,7 @@ class _MeetingPepoleState extends State<MeetingPepole>
     return SlideTransition(
       position: fristHalfAnimation,
       child: Padding(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          padding: EdgeInsets.only(top: ScreenUtil().statusBarHeight),
           child: Stack(
             children: [
               CustomPaint(
@@ -65,10 +64,10 @@ class _MeetingPepoleState extends State<MeetingPepole>
                       SolarPainter(solars: _solars, animation: _animation)),
               Positioned(
                   left: 0,
-                  bottom: 260 + MediaQuery.of(context).padding.bottom,
+                  bottom: 260.w + ScreenUtil().bottomBarHeight,
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.symmetric(horizontal: 48),
+                    width: ScreenUtil().screenWidth,
+                    padding: EdgeInsets.symmetric(horizontal: 48.w),
                     child: Column(
                       children: [
                         Text(
@@ -99,39 +98,36 @@ class _MeetingPepoleState extends State<MeetingPepole>
     ui.Image message = await AssetImg.askImage('message'.png);
 
     _solars.addAll([
-      Solar(imageInfo: women1, size: const Size(64, 64), radius: 0, begin: 0),
+      Solar(imageInfo: women1, size: Size(64.w, 64.w), radius: 0, begin: 0),
       Solar(
         imageInfo: women2,
-        size: const Size(32, 32),
-        radius: 100,
+        size: Size(32.w, 32.w),
+        radius: 100.r,
         begin: 0.17,
       ),
-      Solar(imageInfo: men3, size: const Size(38, 38), radius: 100, begin: 0.7),
+      Solar(imageInfo: men3, size: Size(38.w, 38.w), radius: 100.r, begin: 0.7),
       Solar(
-          imageInfo: women3, size: const Size(60, 60), radius: 145, begin: 0.6),
+          imageInfo: women3, size: Size(60.w, 60.w), radius: 145.r, begin: 0.6),
       Solar(
-          imageInfo: men2, size: const Size(40, 40), radius: 145, begin: 0.46),
+          imageInfo: men2, size: Size(40.w, 40.w), radius: 145.r, begin: 0.46),
       Solar(
-          imageInfo: message,
-          size: const Size(24, 25),
-          radius: 145,
-          begin: 0.35),
+          imageInfo: message, size: Size(24.w, 25.w), radius: 145, begin: 0.35),
       Solar(
-          imageInfo: men1, size: const Size(40, 40), radius: 145, begin: 0.24),
+          imageInfo: men1, size: Size(40.w, 40.w), radius: 145.r, begin: 0.24),
       Solar(
           imageInfo: women4,
-          size: const Size(44, 44),
-          radius: 145,
+          size: Size(44.w, 44.w),
+          radius: 145.r,
           begin: 0.07),
       Solar(
           imageInfo: women5,
-          size: const Size(38, 38),
-          radius: 145,
+          size: Size(38.w, 38.w),
+          radius: 145.r,
           begin: 0.95),
       Solar(
           imageInfo: location,
-          size: const Size(24, 26),
-          radius: 145,
+          size: Size(24.w, 26.w),
+          radius: 145.r,
           begin: 0.8),
     ]);
   }
